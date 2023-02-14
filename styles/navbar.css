@@ -1,0 +1,60 @@
+.container__navbar {
+    background-color: var(--background-second);
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__menu {
+    background-image: url('../img/menu_hamburger-highlight--third.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+}
+
+.menu__button {
+    display: none;
+}
+
+.nav__menu--button-label {
+    height: 72px;
+    width: 72px;
+}
+
+.health__bar{
+    background: var(--background-main);
+}
+
+.menu {
+    position: absolute;
+    top: 100%;
+    display: none;    
+}
+
+.menu__list--option {
+    justify-content: center;
+    margin: 1px 0;
+}
+
+.menu__list--option-link {
+    display: flex;
+    text-decoration: none;
+    color: var(--highlight-third);
+    height: 72px;
+    width: 144px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__button:checked ~ .menu {
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    background-color: var(--background-second);
+    width: 144px;
+    align-items: center;
+    border-bottom-right-radius: var(--border-radius);
+}

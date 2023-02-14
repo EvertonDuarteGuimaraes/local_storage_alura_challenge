@@ -1,0 +1,5 @@
+.container__main {
+    background-color: var(--background-main);
+    height: 85vh;
+    width: 100vw;
+}
