@@ -1,5 +1,35 @@
 .container__main {
+    display: flex;
     background-color: var(--background-main);
     height: 85vh;
     width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__blocks{
+    background-color: var(--background-second);
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.block {
+    padding: 4em;
+    margin: 1px;
+    border-radius: var(--border-radius);
+}
+
+.gray {
+    background-color: var(--background-main);
+}
+
+.highlight {
+    background-color: var(--highlight-third);
 }

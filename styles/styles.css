@@ -14,12 +14,6 @@
     --border-radius: 8px;
 }
 
-.item__container {
-    height: 72px;
-    width: 72px;
-    margin: 0.5em;
-}
-
 .item__container--large {
     height: 72px;
     width: 144px;
