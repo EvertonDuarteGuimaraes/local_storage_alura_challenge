@@ -1,5 +1,4 @@
 .container__navbar {
-    background-color: var(--background-second);
     height: 10vh;
     width: 100vw;
     display: flex;
@@ -7,12 +6,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 1em 0;
-    border-bottom: 1px solid var(--highlight-third);
 }
 
 .nav__menu {
-    background-color: var(--highlight-third);
-    border-radius: var(--border-radius);
     display: flex;
     margin-left: 5px;
 }
@@ -22,12 +18,18 @@
 }
 
 .nav__menu--button-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 72px;
-    width: 72px;
+    width: 144px;
+    border-radius: var(--border__radius);
 }
 
 .health__bar{
-    background: var(--background-main);
+    height: 72px;
+    width: 144px;
+    margin: 0.5em;
 }
 
 .menu {
@@ -35,8 +37,6 @@
     top: 100%;
     display: none;    
     z-index: 1;
-    border-right: 1px solid var(--highlight-third);
-    border-bottom: 1px solid var(--highlight-third);
 }
 
 .menu__list--option {
@@ -45,14 +45,12 @@
 }
 
 .menu__list--option:hover {
-    background-color: var(--background-third);
-    border-bottom-right-radius: var(--border-radius);
+    color: var(--third);
 }
 
 .menu__list--option-link {
     display: flex;
     text-decoration: none;
-    color: var(--highlight-third);
     height: 72px;
     width: 144px;
     align-items: center;
@@ -63,8 +61,6 @@
     display: flex;
     flex-direction: column;
     left: 0;
-    background-color: var(--background-second);
     width: 144px;
     align-items: center;
-    border-bottom-right-radius: var(--border-radius);
 }

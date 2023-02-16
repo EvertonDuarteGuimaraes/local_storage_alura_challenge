@@ -1,5 +1,10 @@
 const nodeListBlocks = document.querySelectorAll('.block');
 const blocks = Array.from(nodeListBlocks);
+const colorButton = document.querySelectorAll('.menu__list--option-link');
+
+let currentHighLight = 'highlight--main';
+let gray = 'gray';
+let currentBorder = 'item__border--main';
 
 blocks.forEach(element => {
     element.addEventListener('click', (event) => {
@@ -8,12 +13,12 @@ blocks.forEach(element => {
 });
 
 function toggleLight (element) {
-    if(element.classList.contains('gray')) {
-        element.classList.remove('gray');
-        element.classList.add('highlight');
+    if(element.classList.contains(gray)) {
+        element.classList.remove(gray);
+        element.classList.add(currentHighLight);
     } else {
-        element.classList.remove('highlight');
-        element.classList.add('gray');
+        element.classList.remove(currentHighLight);
+        element.classList.add(gray);
     }
 }
 
@@ -43,4 +48,57 @@ function puzzleShuffle (element) {
     if (blocks.indexOf(element) === 5) {
         toggleLight(blocks[6]);
     }
+}
+
+colorButton.forEach(element => {
+    element.addEventListener('click', (event) => {
+        changeAllHighlights(event.target.textContent);
+    });
+});
+
+function changeAllHighlights (color) {
+    const highlights = document.querySelectorAll(`.${currentHighLight}`);
+    const borders = document.querySelectorAll(`.${currentBorder}`);
+
+    highlights.forEach (element => {
+        element.classList.remove(currentHighLight);
+        element.classList.add(changeHighlight(color));
+    });
+
+    borders.forEach (element => {
+        element.classList.remove(currentBorder);
+        element.classList.add(changeBorder(color));
+    });
+
+    currentHighLight = changeHighlight(color);
+    currentBorder = changeBorder(color);
+}
+
+function  changeHighlight (color) {
+
+    let newHighlight = '';
+
+    if (color === 'Orange') {
+        newHighlight = 'highlight--main';
+    } else if (color === 'Purple') {
+        newHighlight = 'highlight--second';
+    } else {
+        newHighlight = 'highlight--third';
+    }
+
+    return newHighlight;
+}
+
+function changeBorder (color) {
+    let newBorder = '';
+
+    if (color === 'Orange') {
+        newBorder = 'item__border--main';
+    } else if (color === 'Purple') {
+        newBorder = 'item__border--second';
+    } else {
+        newBorder = 'item__border--third';
+    }
+
+    return newBorder;
 }
