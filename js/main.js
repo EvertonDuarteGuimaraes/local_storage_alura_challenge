@@ -1,9 +1,11 @@
 const nodeListBlocks = document.querySelectorAll('.block');
 const blocks = Array.from(nodeListBlocks);
 const colorButton = document.querySelectorAll('.menu__list--option-link');
+const grey = 'grey';
+const menu = document.querySelector('.menu__list');
+const menuButton = document.querySelector('.menu__button');
 
 let currentHighLight = 'highlight--main';
-let gray = 'gray';
 let currentBorder = 'item__border--main';
 
 blocks.forEach(element => {
@@ -12,14 +14,16 @@ blocks.forEach(element => {
     });
 });
 
-function toggleLight (element) {
-    if(element.classList.contains(gray)) {
-        element.classList.remove(gray);
-        element.classList.add(currentHighLight);
-    } else {
+function toggleLight (element) {   
+    if(!element.classList.contains(grey)) {
         element.classList.remove(currentHighLight);
-        element.classList.add(gray);
-    }
+        element.classList.add(grey);
+
+        return;
+    } 
+
+    element.classList.remove(grey);
+    element.classList.add(currentHighLight);
 }
 
 function puzzleShuffle (element) {
@@ -50,9 +54,24 @@ function puzzleShuffle (element) {
     }
 }
 
+function toggleMenu () {
+    if(!(menu.style.display === 'none')) {
+        menu.style.display = "none";
+
+        return;
+    }
+
+    menu.style.display = "flex";
+}
+
+menuButton.addEventListener('click', (event) => {
+    toggleMenu();
+});
+
 colorButton.forEach(element => {
     element.addEventListener('click', (event) => {
         changeAllHighlights(event.target.textContent);
+        toggleMenu();
     });
 });
 

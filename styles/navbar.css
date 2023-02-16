@@ -14,10 +14,6 @@
 }
 
 .menu__button {
-    display: none;
-}
-
-.nav__menu--button-label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,11 +28,15 @@
     margin: 0.5em;
 }
 
-.menu {
+.menu__list {
     position: absolute;
     top: 100%;
     display: none;    
     z-index: 1;
+    flex-direction: column;
+    left: 0;
+    width: 144px;
+    align-items: center;
 }
 
 .menu__list--option {
@@ -55,12 +55,4 @@
     width: 144px;
     align-items: center;
     justify-content: center;
-}
-
-.menu__button:checked ~ .menu {
-    display: flex;
-    flex-direction: column;
-    left: 0;
-    width: 144px;
-    align-items: center;
 }
