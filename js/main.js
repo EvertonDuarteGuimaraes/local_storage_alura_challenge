@@ -7,7 +7,7 @@ const menuButton = document.querySelector('.menu__button');
 const tries = document.querySelector('.tries__number');
 
 let countdown = parseInt(tries.textContent);
-let currentHighLight = 'highlight--main';
+let currentHighLight = localStorage.getItem('currentColor') || 'highlight--main';
 let currentBorder = 'item__border--main';
 
 blocks.forEach(element => {
@@ -76,6 +76,7 @@ colorButton.forEach(element => {
         changeAllHighlights(event.target.textContent);
         menuButton.innerHTML = event.target.textContent;
         toggleMenu();
+        storageCurrentHighlightColors(event.target.textContent);
     });
 });
 
@@ -101,9 +102,9 @@ function  changeHighlight (color) {
 
     let newHighlight = '';
 
-    if (color === 'Orange') {
+    if (color === 'Purple') {
         newHighlight = 'highlight--main';
-    } else if (color === 'Purple') {
+    } else if (color === 'Orange') {
         newHighlight = 'highlight--second';
     } else {
         newHighlight = 'highlight--third';
@@ -115,9 +116,9 @@ function  changeHighlight (color) {
 function changeBorder (color) {
     let newBorder = '';
 
-    if (color === 'Orange') {
+    if (color === 'Purple') {
         newBorder = 'item__border--main';
-    } else if (color === 'Purple') {
+    } else if (color === 'Orange') {
         newBorder = 'item__border--second';
     } else {
         newBorder = 'item__border--third';
@@ -136,10 +137,9 @@ function winCondition () {
         }
     });
     if (hasAnyGreyBlock === 0) {
-        alert('You Win!');
+        tries.innerHTML = 'You Win!';
     }
-    if (countdown === 0) {
-        alert('You lose!');
-        location.reload();
+    if (countdown <= 0) {
+        tries.innerHTML = 'You Lose!';
     }  
 }

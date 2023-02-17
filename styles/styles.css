@@ -10,8 +10,8 @@
     --main: #e3e3e3;
     --second: #c4c3c3;
     --third: #d2cfcfdb;
-    --highlight-main: #eaa611;
-    --highlight-second: #970e90;
+    --highlight-main: #970e90;
+    --highlight-second: #eaa611;
     --highlight-third: #419bc5;
     /*-----border__radius-----*/
     --border__radius: 8px;
@@ -24,11 +24,11 @@
     border-radius: var(--border-radius);
 }
 
-.text__color {
+.text {
     color: var(--main);
     font-family: var(--font-main);
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .grey {

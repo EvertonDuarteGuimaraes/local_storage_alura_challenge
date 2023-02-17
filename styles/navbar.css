@@ -1,11 +1,15 @@
-.container__navbar {
-    height: 10vh;
+.navbar {
+    height: 20vh;
     width: 100vw;
+}
+
+.container__navbar {
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: space-between;
-    padding: 1em 0;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
 }
 
 .nav__menu {
@@ -19,7 +23,8 @@
     height: 72px;
     width: 144px;
     border-radius: var(--border__radius);
-    margin-left: 1em;
+    margin: 0 1em;
+    text-decoration: none;
 }
 
 .container__tries {
@@ -58,4 +63,31 @@
     width: 144px;
     align-items: center;
     justify-content: center;
+}
+
+.text__purple {
+    color: var(--highlight-main);
+    font-size: 24px;
+    font-family: var(--font-main);
+    font-weight: 700;
+}
+
+.text__orange {
+    color: var(--highlight-second);
+    font-size: 24px;
+    font-family: var(--font-main);
+    font-weight: 700;
+}
+
+.text__blue {
+    color: var(--highlight-third);
+    font-size: 24px;
+    font-family: var(--font-main);
+    font-weight: 700;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
 }
