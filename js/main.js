@@ -1,16 +1,19 @@
 const nodeListBlocks = document.querySelectorAll('.block');
 const blocks = Array.from(nodeListBlocks);
-const colorButton = document.querySelectorAll('.menu__list--option-link');
+const colorButton = document.querySelectorAll('.menu__button--color');
 const grey = 'grey';
 const menu = document.querySelector('.menu__list');
 const menuButton = document.querySelector('.menu__button');
+const tries = document.querySelector('.tries__number');
 
+let countdown = parseInt(tries.textContent);
 let currentHighLight = 'highlight--main';
 let currentBorder = 'item__border--main';
 
 blocks.forEach(element => {
     element.addEventListener('click', (event) => {
-        puzzleShuffle(event.target)
+        puzzleShuffle(event.target);
+        winCondition();
     });
 });
 
@@ -71,6 +74,7 @@ menuButton.addEventListener('click', (event) => {
 colorButton.forEach(element => {
     element.addEventListener('click', (event) => {
         changeAllHighlights(event.target.textContent);
+        menuButton.innerHTML = event.target.textContent;
         toggleMenu();
     });
 });
@@ -120,4 +124,22 @@ function changeBorder (color) {
     }
 
     return newBorder;
+}
+
+function winCondition () {
+    countdown--;
+    tries.innerHTML = JSON.stringify(countdown);
+    let hasAnyGreyBlock = 0;
+    blocks.forEach(element => {
+        if (element.classList.contains('grey')) {
+            hasAnyGreyBlock++;
+        }
+    });
+    if (hasAnyGreyBlock === 0) {
+        alert('You Win!');
+    }
+    if (countdown === 0) {
+        alert('You lose!');
+        location.reload();
+    }  
 }
