@@ -86,9 +86,3 @@
     font-family: var(--font-main);
     font-weight: 700;
 }
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}

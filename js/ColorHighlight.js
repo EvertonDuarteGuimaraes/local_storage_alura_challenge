@@ -1,28 +1,28 @@
-export class Highlight {
+export class ColorHighlight {
     constructor () {
         this._grey = 'grey';
-        this._currentHighlight = 'highlight--Purple';
+        this._currentColor = 'highlight--Purple';
         this._currentBorder = 'item__border--Purple';
     }
 
     toggle (block) {   
         if(!block.classList.contains(this._grey)) {
-            block.classList.remove(this._currentHighlight);
+            block.classList.remove(this._currentColor);
             block.classList.add(this._grey);
     
             return;
         } 
     
         block.classList.remove(this._grey);
-        block.classList.add(this._currentHighlight);
+        block.classList.add(this._currentColor);
     }
 
-    setAllHighlights (color) {
-        let highlights = document.querySelectorAll(`.${this._currentHighlight}`);
+    setAllColors (color) {
+        let highlights = document.querySelectorAll(`.${this._currentColor}`);
         let borders = document.querySelectorAll(`.${this._currentBorder}`);
 
         highlights.forEach(highlight => {
-            highlight.classList.remove(this._currentHighlight);
+            highlight.classList.remove(this._currentColor);
             highlight.classList.add(`highlight--${color}`);
         });
 
@@ -35,7 +35,7 @@ export class Highlight {
     }
 
     _setCurrentColors (color) {
-        this._currentHighlight = `highlight--${color}`;
+        this._currentColor = `highlight--${color}`;
         this._currentBorder = `item__border--${color}`;
     }
 }

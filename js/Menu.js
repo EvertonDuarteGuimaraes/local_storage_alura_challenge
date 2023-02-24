@@ -1,11 +1,11 @@
-import { Highlight } from "./Highlight.js";
+import { ColorHighlight } from "./ColorHighlight.js";
 
 export class Menu {
     constructor () {
         this._menuButton = document.querySelector('.menu__button');
         this._colorButtons = document.querySelectorAll('.menu__button--color');
         this._menu = document.querySelector('.menu__list');
-        this._highlight = new Highlight();
+        this._ColorHighlight = new ColorHighlight();
 
         this._menuEventListener();
         this._colorButtonEventListener();   
@@ -20,7 +20,9 @@ export class Menu {
     _colorButtonEventListener () {
         this._colorButtons.forEach(colorButton => {
             colorButton.addEventListener('click', (event) => {
-                this._highlight.setAllHighlights(event.target.textContent);
+                this._ColorHighlight.setAllColors(event.target.textContent);
+                this._menuButton.innerHTML = event.target.textContent;
+                this._toggle(event.target);
             });
         });
     }
