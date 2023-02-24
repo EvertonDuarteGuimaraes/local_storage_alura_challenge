@@ -15,8 +15,8 @@ export class Puzzle {
         this._blocks.forEach(block => {
             block.addEventListener('click', (event) => {
                 this._shuffle(event.target);
-            })
-        })
+            });
+        });
     }
 
     _shuffle (block) {
@@ -27,6 +27,6 @@ export class Puzzle {
             if (this._neighborTracker.isValid(this._blocks.indexOf(block), neighbor)) {
                 this._highlight.toggle(this._blocks[neighbor]);
             }
-        })
+        });
     }
 }
