@@ -67,21 +67,21 @@
 }
 
 .text__purple {
-    color: var(--highlight-main);
+    color: var(--highlight-Purple);
     font-size: 24px;
     font-family: var(--font-main);
     font-weight: 700;
 }
 
 .text__orange {
-    color: var(--highlight-second);
+    color: var(--highlight-Orange);
     font-size: 24px;
     font-family: var(--font-main);
     font-weight: 700;
 }
 
 .text__blue {
-    color: var(--highlight-third);
+    color: var(--highlight-Blue);
     font-size: 24px;
     font-family: var(--font-main);
     font-weight: 700;

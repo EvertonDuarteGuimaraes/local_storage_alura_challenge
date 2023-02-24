@@ -1,6 +1,5 @@
 @import url('navbar.css');
 @import url('main.css');
-@import url('footer.css');
 
 :root {
     /*-----Colors-----*/
@@ -10,9 +9,9 @@
     --main: #e3e3e3;
     --second: #c4c3c3;
     --third: #d2cfcfdb;
-    --highlight-main: #970e90;
-    --highlight-second: #eaa611;
-    --highlight-third: #419bc5;
+    --highlight-Purple: #970e90;
+    --highlight-Orange: #eaa611;
+    --highlight-Blue: #419bc5;
     /*-----border__radius-----*/
     --border__radius: 8px;
     /*-----Fonts-----*/
@@ -20,7 +19,7 @@
 }
 
 .item__border {
-    border: 1px solid var(--highlight-third);
+    border: 1px solid var(--highlight-Blue);
     border-radius: var(--border-radius);
 }
 
@@ -39,29 +38,29 @@
     background-color: var(--second);
 }
 
-.highlight--main {
-    background-color: var(--highlight-main);
+.highlight--Purple {
+    background-color: var(--highlight-Purple);
 }
 
-.item__border--main {
-    border: 1px solid var(--highlight-main);
+.item__border--Purple {
+    border: 1px solid var(--highlight-Purple);
     border-radius: var(--border__radius);
 }
 
-.highlight--second {
-    background-color: var(--highlight-second);
+.highlight--Orange {
+    background-color: var(--highlight-Orange);
 }
 
-.item__border--second {
-    border: 1px solid var(--highlight-second);
+.item__border--Orange {
+    border: 1px solid var(--highlight-Orange);
     border-radius: var(--border__radius);
 }
 
-.highlight--third {
-    background-color: var(--highlight-third);
+.highlight--Blue {
+    background-color: var(--highlight-Blue);
 }
 
-.item__border--third {
-    border: 1px solid var(--highlight-third);
+.item__border--Blue {
+    border: 1px solid var(--highlight-Blue);
     border-radius: var(--border__radius);
 }
