@@ -6,7 +6,7 @@ export class Puzzle {
     constructor () {
         this._nodeListBlocks = document.querySelectorAll('.block');
         this._blocks = Array.from(this._nodeListBlocks);
-        this._ColorHighlight = new ColorHighlight();
+        this._colorHighlight = new ColorHighlight();
         this._neighborTracker = new NeighborTracker();
         this._scoreBar = new ScoreBar();
 
@@ -18,17 +18,19 @@ export class Puzzle {
             block.addEventListener('click', (event) => {
                 this._shuffle(event.target);
                 this._scoreBar.update(this._blocks);
+                console.log(this._colorHighlight._currentColor);
+                console.log(this._colorHighlight._currentBorder);
             });
         });
     }
 
     _shuffle (block) {
-        this._ColorHighlight.toggle(block);
+        this._colorHighlight.toggle(block);
+
         let neighbors = this._neighborTracker.find(this._blocks.indexOf(block));
-    
         neighbors.forEach(neighbor => {
             if (this._neighborTracker.isValid(this._blocks.indexOf(block), neighbor)) {
-                this._ColorHighlight.toggle(this._blocks[neighbor]);
+                this._colorHighlight.toggle(this._blocks[neighbor]);
             }
         });
     }

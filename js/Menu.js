@@ -5,7 +5,7 @@ export class Menu {
         this._menuButton = document.querySelector('.menu__button');
         this._colorButtons = document.querySelectorAll('.menu__button--color');
         this._menu = document.querySelector('.menu__list');
-        this._ColorHighlight = new ColorHighlight();
+        this._colorHighlight = new ColorHighlight();
 
         this._menuEventListener();
         this._colorButtonEventListener();   
@@ -20,9 +20,11 @@ export class Menu {
     _colorButtonEventListener () {
         this._colorButtons.forEach(colorButton => {
             colorButton.addEventListener('click', (event) => {
-                this._ColorHighlight.setAllColors(event.target.textContent);
                 this._menuButton.innerHTML = event.target.textContent;
+                this._colorHighlight.setAllColors(this._menuButton.textContent);
                 this._toggle(event.target);
+                console.log(this._colorHighlight._currentColor);
+                console.log(this._colorHighlight._currentBorder);
             });
         });
     }

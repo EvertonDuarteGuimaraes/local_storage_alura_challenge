@@ -3,18 +3,20 @@ export class ColorHighlight {
         this._grey = 'grey';
         this._currentColor = 'highlight--Purple';
         this._currentBorder = 'item__border--Purple';
+        this._menuButton = document.querySelector('.menu__button');
     }
 
-    toggle (block) {   
-        if(!block.classList.contains(this._grey)) {
-            block.classList.remove(this._currentColor);
-            block.classList.add(this._grey);
+    toggle (block) {
+        this._update();   
+        if(block.classList.contains(this._grey)) {
+            block.classList.remove(this._grey);
+            block.classList.add(this._currentColor);
     
             return;
         } 
     
-        block.classList.remove(this._grey);
-        block.classList.add(this._currentColor);
+        block.classList.remove(this._currentColor);
+        block.classList.add(this._grey);
     }
 
     setAllColors (color) {
@@ -31,11 +33,11 @@ export class ColorHighlight {
             border.classList.add(`item__border--${color}`);
         });
 
-        this._setCurrentColors(color);
+        this._update();
     }
 
-    _setCurrentColors (color) {
-        this._currentColor = `highlight--${color}`;
-        this._currentBorder = `item__border--${color}`;
+    _update () {
+        this._currentColor = `highlight--${this._menuButton.textContent}`;
+        this._currentBorder = `item__border--${this._menuButton.textContent}`;
     }
 }
