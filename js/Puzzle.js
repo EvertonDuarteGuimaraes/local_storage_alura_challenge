@@ -18,8 +18,6 @@ export class Puzzle {
             block.addEventListener('click', (event) => {
                 this._shuffle(event.target);
                 this._scoreBar.update(this._blocks);
-                console.log(this._colorHighlight._currentColor);
-                console.log(this._colorHighlight._currentBorder);
             });
         });
     }

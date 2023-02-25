@@ -23,8 +23,6 @@ export class Menu {
                 this._menuButton.innerHTML = event.target.textContent;
                 this._colorHighlight.setAllColors(this._menuButton.textContent);
                 this._toggle(event.target);
-                console.log(this._colorHighlight._currentColor);
-                console.log(this._colorHighlight._currentBorder);
             });
         });
     }
