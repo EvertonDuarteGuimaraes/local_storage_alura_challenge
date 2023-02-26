@@ -1,14 +1,19 @@
-import { ColorHighlight } from "./ColorHighlight.js";
-
 export class Menu {
-    constructor () {
+    constructor (objHighlight) {
         this._menuButton = document.querySelector('.menu__button');
         this._colorButtons = document.querySelectorAll('.menu__button--color');
         this._menu = document.querySelector('.menu__list');
-        this._colorHighlight = new ColorHighlight();
+        this._colorHighlight = objHighlight;
+        
+        this._menuButton.innerHTML = localStorage.getItem('colorSelected') || 'Purple';
+        this._colorHighlight.setAllColors(this.getMenuButton());
 
         this._menuEventListener();
         this._colorButtonEventListener();   
+    }
+
+    getMenuButton () {
+        return this._menuButton.textContent;
     }
 
     _menuEventListener () {
@@ -21,7 +26,8 @@ export class Menu {
         this._colorButtons.forEach(colorButton => {
             colorButton.addEventListener('click', (event) => {
                 this._menuButton.innerHTML = event.target.textContent;
-                this._colorHighlight.setAllColors(this._menuButton.textContent);
+                this._colorHighlight.setAllColors(this.getMenuButton());
+                localStorage.setItem('colorSelected', this.getMenuButton());
                 this._toggle(event.target);
             });
         });

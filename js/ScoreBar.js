@@ -1,13 +1,21 @@
 export class ScoreBar {
     constructor () {
         this._scoreBar = document.querySelector('.score');
-        this._scoreRemaining = '10';
         this._victoryMessage = 'You win!';
         this._defeatMessage = 'You lose!';
+
+        this._scoreRemaining = JSON.parse(localStorage.getItem('scoreRemaining')) || '10';
+        this.setScore(this._scoreRemaining);
+    }
+
+    setScore (score) {
+        this._scoreRemaining = score;
+        this._scoreBar.innerHTML = this._scoreRemaining;
     }
 
     _loseScore () {
         this._scoreRemaining = JSON.stringify(parseInt(this._scoreRemaining - 1));
+        localStorage.setItem('scoreRemaining', this._scoreRemaining);
     }
 
     update (arrayPuzzleBlocks) {

@@ -7,7 +7,6 @@ export class ColorHighlight {
     }
 
     toggle (block) {
-        this._update();   
         if(block.classList.contains(this._grey)) {
             block.classList.remove(this._grey);
             block.classList.add(this._currentColor);
@@ -17,6 +16,10 @@ export class ColorHighlight {
     
         block.classList.remove(this._currentColor);
         block.classList.add(this._grey);
+    }
+
+    isToggled(block) {
+        if(block.classList.contains(this._currentColor)) return true; 
     }
 
     setAllColors (color) {
