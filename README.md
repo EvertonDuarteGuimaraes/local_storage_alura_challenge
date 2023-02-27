@@ -1,6 +1,6 @@
 <h1 align="center">  Exercício com local Storage </h1>
 
-<p> Durante o curso "JavaScript na Web: armazenando dados no navegador", um desafio propôs armazenar dados utilizando local storage do próprio navegador, então resolvi aplicar de tal maneira. Optei por fazer um mini game para não apenas manter salvo strings de opções selecionadas previamente bem como através do JSON.stringfy selecionar determinados elementos de um objeto para depois recarregar o mesmo aplicado tal caracteristica e assim recuperar o seu estado ao recarregar a página</p>
+<p> Durante o curso "JavaScript na Web: armazenando dados no navegador", um desafio propôs armazenar dados utilizando local storage do próprio navegador, então resolvi aplicar de tal maneira. Optei por fazer um mini game para não apenas manter salvo strings de opções selecionadas previamente bem como através do JSON.stringfy selecionar determinados elementos de um objeto para depois recarregar o mesmo aplicado tal caracteristica e assim recuperar o seu estado ao recarregar a página, nesse caso, a cor selecionada, o número de tentativas restantes e a posição dos blocos destacados no jogo</p>
 
 <h2> Regras do jogo </h2>
 
