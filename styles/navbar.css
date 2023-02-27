@@ -28,13 +28,17 @@
     text-decoration: none;
 }
 
-.container__tries {
+.container__score {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 72px;
     width: 144px;
     margin-right: 1em;
+}
+
+.container__score:hover {
+    content: 'restart';
 }
 
 .menu__list {

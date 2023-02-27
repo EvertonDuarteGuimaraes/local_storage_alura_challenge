@@ -1,10 +1,11 @@
 .container__main {
     display: flex;
+    flex-direction: column;
     background-color: var(--background-main);
     height: 100vh;
     width: 100vw;
     position: relative;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
@@ -38,4 +39,14 @@
 
 .highlight {
     background-color: var(--highlight-third);
+}
+
+.restart__button {
+    display: flex;
+    text-decoration: none;
+    margin: 1em 0;
+    height: 72px;
+    width: 144px;
+    align-items: center;
+    justify-content: center;
 }

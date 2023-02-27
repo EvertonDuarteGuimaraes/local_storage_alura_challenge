@@ -10,12 +10,14 @@ export class Puzzle {
         this._colorHighlight = new ColorHighlight();
         this._neighborTracker = new NeighborTracker();
         this._scoreBar = new ScoreBar();
+        this._restartButton = document.querySelector('.restart__button');
         
         this._blocksStorage = JSON.parse(localStorage.getItem('puzzle')) || [1, 3, 6, 8];
         this._reload();
 
         this._menu = new Menu(this._colorHighlight, this._storage);
         this._puzzleBlocksEventListener();
+        this._restartButtonEventListener();
     }
 
     _puzzleBlocksEventListener () {
@@ -53,5 +55,12 @@ export class Puzzle {
         this._blocksStorage.forEach(block => {
             this._colorHighlight.toggle(this._blocks[block]);
         })
-    }   
+    }
+    
+    _restartButtonEventListener() {
+        this._restartButton.addEventListener('click', () => {
+            localStorage.clear();
+            location.reload();
+        });
+    }
 }
