@@ -47,7 +47,6 @@
     display: none;    
     z-index: 1;
     flex-direction: column;
-    left: 0;
     width: 144px;
     align-items: center;
 }
@@ -55,10 +54,6 @@
 .menu__list--option {
     justify-content: center;
     margin: 1px 0;
-}
-
-.menu__list--option:hover {
-    color: var(--third);
 }
 
 .menu__button--color {
@@ -89,4 +84,26 @@
     font-size: 24px;
     font-family: var(--font-main);
     font-weight: 700;
+}
+
+@media screen and (min-width: 780px) {
+    .menu__button, .container__score {
+        width: 370px;
+    }
+
+    .menu__list {
+        width: 370px;
+        margin-right: 50%;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .container__navbar {
+        justify-content: center;
+    }
+
+    .menu__list {
+        width: 370px;
+        margin-right: 50%;
+    }
 }

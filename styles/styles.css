@@ -68,3 +68,10 @@
 body {
     max-height: 500px;
 }
+
+.grey:hover, 
+.highlight--Purple:hover,
+.highlight--Orange:hover,
+.highlight--Blue:hover {
+    opacity: 0.8;
+}
