@@ -16,9 +16,10 @@
 <p align="center" justify="center">b_____<strong color="purple">B</strong>_____<strong>B</strong></p>
 <p align="center" justify="center"><strong>B</strong>_____<strong>B</strong>_____<strong>B</strong></p>
 
-<p>É um quebra cabeças simples porém apenas para exercitar alguns fudamentos que aprendi durante os curos "Java Script para Web: Crie páginas dinâmicas", "Java Script Programação Orientada a Objetos", "JavaScript: manipulando o DOM", "CSS: dispondo elementos com Flexbox e Grid", "HTML e CSS: responsividade com mobile-first" e entre outros aprendidos com os  professores: Matheus Alberto, Mônica Mazzochi Hillman, Pedro Marins, Ricardo Bugan Debs, Vanessa Me Tonini.</p>
-
 <h2>Melhorias</h2>
 <p align=>Ainda falta algumas features para serem criadas ou melhoradas, como para o jogo ao finalizar o número de tentativas e alguns estilos mais refinados ao destacar o blocos, como um transition por exemplo. Pretendo ver mais cursos e aprender como aprimorar isso em breve. Criticas e são bem víndas, dicas e conselhos ainda mais.</p>
+
+<h2>Agradecimentos</h2>
+<p>É um quebra cabeças simples porém apenas para exercitar alguns fudamentos que aprendi durante os curos "Java Script para Web: Crie páginas dinâmicas", "Java Script Programação Orientada a Objetos", "JavaScript: manipulando o DOM", "CSS: dispondo elementos com Flexbox e Grid", "HTML e CSS: responsividade com mobile-first" e entre outros aprendidos com os  professores: Matheus Alberto, Mônica Mazzochi Hillman, Pedro Marins, Ricardo Bugan Debs, Vanessa Me Tonini.</p>
 
 <p align="center" justify="center">Um obrigado a todos, divirtam-se com o jogo.</p>
